@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html" charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
+
+    <script language="JavaScript" type="text/javascript" src="Scripts/BaseCommand.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/BaseEvent.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/LogConsole.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/Language.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/custom.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-3.3.1.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="maincontents.js"></script>
+    <script src="boots/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="boots/css/bootstrap.min.css">
+    
+    <link href="css/Main.css" rel="stylesheet" type="text/css"/>
+</head>
+
+
+<body  onbeforeunload="JSUnload()" ondragstart="return false;" ondrop="return false;" style="-ms-user-select:none;" oncontextmenu="return false;">
+
+<img src="assets/home.png" onclick="location.href ='main.htm'">
+
+<script type="text/javascript">
+  if (!readCookie("NavigationState")) {
+    writeCookie("NavigationState", true, 30);
+  }
+  function GetJoke(){
+    var temp=Math.floor((Math.random() * 6) + 1);
+    PlaySpeech(jokes[temp]);
+    //alert(jokes[temp]);
+  }
+  var initialJokeTime=setTimeout(GetJoke,30000);
+
+  $(document).click(function(event) {
+      clearTimeout( initialJokeTime );
+      initialJokeTime=setTimeout(GetJoke,120000);
+  });
+</script>
+</body>
+</html>

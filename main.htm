@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html" charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
+
+    <script language="JavaScript" type="text/javascript" src="Scripts/BaseCommand.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/BaseEvent.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/LogConsole.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/Language.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/custom.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-3.3.1.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="maincontents.js"></script>
+    <script src="boots/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="boots/css/bootstrap.min.css">
+    
+    <link href="css/Main.css" rel="stylesheet" type="text/css"/>
+</head>
+
+
+<body  onbeforeunload="JSUnload()" ondragstart="return false;" ondrop="return false;" style="-ms-user-select:none;" oncontextmenu="return false;">
+
+<header onclick="">
+    <div class="img-home" onclick="location.href ='maincontents.htm'"></div>
+
+</header>
+<section class="main-content">
+  <!--<h1 class="welcome-text">WELCOME</br>TO NOVARTIS</h1>
+  <div class="get-started">Get Started</div>-->
+
+  <div class="navigation">
+    <div class="col-sm-12 navigation-box" style="" onclick="FC_ContentsCall('MatchGame')">
+      <img src="assets/icons/game.png" class="navigation-icon">
+    </div>
+    <div class="col-sm-12 navigation-box" style="" onclick="FC_ContentsCall('Selfie')">
+      <img src="assets/icons/selfie.png" class="navigation-icon">
+      
+    </div>
+    <div class="col-sm-12 navigation-box" style="" onclick="FC_ContentsCall('Videos')">
+      <img src="assets/icons/videos.png" class="navigation-icon">
+      
+    </div>
+    <div class="col-sm-12 navigation-box" style="" onclick="FC_ContentsCall('')">
+      <img src="assets/icons/robot-dancer.png" class="navigation-icon">
+      
+    </div>
+    <!--<div class="col-sm-6 navigation-box" style="background-color: #023761" onclick="FC_ContentsCall('Dance')">
+      <img src="assets/icons/dance.png" class="navigation-icon">
+      <h2 class="navigation-text">DANCE WITH THE ROBOT</h2>
+    </div>-->
+    <div class="col-sm-12 navigation-box" style="" onclick="FC_ContentsCall('Take-a-selfie')">
+      <img src="assets/icons/take-a-selfie.png" class="navigation-icon">
+      
+    </div>
+    <div class="col-sm-6 navigation-box" style="">
+      <img src="assets/icons/go-mobile.png" class="navigation-icon ">
+      
+    </div>
+  </div>
+
+
+  <footer>
+    
+  </footer>
+</section>
+
+<div id="dialog-overlay"></div>
+<div id="dialog-box">
+
+</div>
+<script type="text/javascript">
+  if (!readCookie("NavigationState")) {
+    writeCookie("NavigationState", true, 30);
+  }
+  function GetJoke(){
+    var temp=Math.floor((Math.random() * 6) + 1);
+    PlaySpeech(jokes[temp]);
+    //alert(jokes[temp]);
+  }
+  var initialJokeTime=setTimeout(GetJoke,30000);
+
+  $(document).click(function(event) {
+      clearTimeout( initialJokeTime );
+      initialJokeTime=setTimeout(GetJoke,120000);
+  });
+</script>
+</body>
+</html>
