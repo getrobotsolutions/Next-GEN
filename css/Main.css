@@ -47,6 +47,7 @@ header .logo img {
 	background-image: url("../assets/background.png");
 	background-repeat: no-repeat;
 	background-size: cover;
+    background-position-y: -264px;
 	height: 1787px;
 }
 
