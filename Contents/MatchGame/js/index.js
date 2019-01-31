@@ -2,7 +2,7 @@
 	
 	var Memory = {
 
-		init: function(cards, score){
+		init: function(cards){
 			this.$game = $(".game");
 			this.$modal = $(".modal");
 			this.$overlay = $(".modal-overlay");
@@ -11,7 +11,7 @@
             this.cardsArray = cards;
 			this.shuffleCards(this.cardsArray);
 			this.setup();
-			this.$score = score;
+
 		},
 
 		shuffleCards: function(cardsArray){
@@ -35,7 +35,7 @@
 		cardClicked: function(){
 			var _ = Memory;
 			var $card = $(this);
-			$card += 1;
+
 			if(!_.paused && !$card.find(".inside").hasClass("matched") && !$card.find(".inside").hasClass("picked")){
 				$card.find(".inside").addClass("picked");
 				if(!_.guess){
@@ -158,9 +158,9 @@
 
     ];
 
-	var score = 0;
+
     
-	Memory.init(cards, score);
+	Memory.init(cards);
 
 
 })();
