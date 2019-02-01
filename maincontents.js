@@ -51,6 +51,10 @@ function FC_ContentsCall(strContentsName, strLanguage)
             //PlaySpeech(speak[1]);
             location.href = "Contents/Take-a-selfie/index.html";
             break;
+        case "Dancer":
+            //PlaySpeech(speak[1]);
+            location.href = "Contents/Dancer/index.html";
+            break;
         
         case "Avatar":
             //ssPlaySpeech(speak[7]);

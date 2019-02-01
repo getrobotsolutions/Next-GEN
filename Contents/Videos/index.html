@@ -16,7 +16,7 @@
 
   <link href="../../css/Main.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="../../boots/css/bootstrap.min.css">
-  <link href="css/eat.css" rel="stylesheet" type="text/css" />
+  <link href="css/video.css" rel="stylesheet" type="text/css" />
 
 
 </head>
@@ -34,28 +34,28 @@
     <div class="wrap" style="text-align: center;">
       
       <div class="products-box">
-        <div class="col-sm-6 product-box" style="" onclick="">
+        <div class="col-sm-6 product-box" style="" onclick="ShowPopup('videos/8524 UGM PHM_James Parker r1.mp4')">
           <img src="images/JAMER-PARKER-BUTTON.png">
         </div>
 
-        <div class="col-sm-6 product-box" onclick="">
+        <div class="col-sm-6 product-box" onclick="ShowPopup('videos/8524 UGM Connect Kim Wiley & Brian Smith r1.mp4')">
           <img src="images/CONNECT-BUTTON.png">
         </div>
       </div>
       <div class="products-box">
-        <div class="col-sm-6 product-box" onclick="">
+        <div class="col-sm-6 product-box" onclick="ShowPopup('videos/8524 UGM Mobile_Stephen Guiterrez r2.mp4')">
           <img src="images/MOBILE-BUTTON.png">
         </div>
-        <div class="col-sm-6 product-box" onclick="l">
+        <div class="col-sm-6 product-box" onclick="ShowPopup('videos/8524 UGM Hosting_Rob Gregory r1.mp4')">
           <img src="images/RCM-BUTTON.png">
         </div>
       </div> 
       <div class="products-box">
-        <div class="col-sm-6 product-box" style="" onclick="">
+        <div class="col-sm-6 product-box" style="" onclick="ShowPopup('videos/8524 UGM PHM_Andrew Foss r1.mp4')">
           <img src="images/POPHEALTH-BUTTON.png">
         </div>
 
-        <div class="col-sm-6 product-box" onclick="">
+        <div class="col-sm-6 product-box" onclick="ShowPopup('videos/8524 UGM Hosting_Brandon Brosi r1.mp4')">
           <img src="images/HOSTING-BUTTON.png">
         </div>
       </div>
@@ -63,14 +63,18 @@
     </div>
   </section>
 
-<div id="dialog-overlay"></div>
-<div id="dialog-box">
-</div>
+<div id="dialog-overlay1"></div>
+      <div id="dialog-box1"><a class="btn-ok">Close</a>
+        <div id="dialog-content1">
+            <div id="dialog-message"><video id="myVideo" width="800" height="540" nocontrols><source src="" type="video/mp4">Your browser does not support the video tag.</video> </div>
+        </div>
+        <img src="images/play.png" id="playPause" onclick="vidplay()">
 
+      </div>
 </body>
 
 
-<script language="JavaScript" type="text/javascript" src="js/eat.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/video.js"></script>
 <script language="JavaScript" type="text/javascript" src="../Common/Scripts/common-inner.js"></script>
 
 <script language="javascript" type="text/javascript">
