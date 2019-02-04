@@ -33,8 +33,8 @@ function JSMain()
         //window.external.StartFaceTracking(false);
         //window.external.InitPose();
         
-        //window.external.StartCamViewer();    
-        //refreshIntervalId = setInterval("UpdateCamImage()", 33);
+        window.external.StartCamViewer();    
+        refreshIntervalId = setInterval("UpdateCamImage()", 33);
     }
 }
 function GoHome()
@@ -121,11 +121,11 @@ function CountDown()
             // 카메라 영상 정지 & 액자 선택 안내 스피치            
             if (isRobot)
             {
-                //clearInterval(refreshIntervalId);
-                //srefreshIntervalId = null;
+                clearInterval(refreshIntervalId);
+                srefreshIntervalId = null;
                 
-               // window.external.PauseCamViewer();
-                //window.external.PlaySpeech(speechJsonObj["frame"][c_language]);
+                window.external.PauseCamViewer();
+                window.external.PlaySpeech(speechJsonObj["frame"][c_language]);
             }
             
             isPhotoTaken = true;
@@ -238,72 +238,37 @@ function SendEmail()
     
     // 이미지 파일명 지정 및 저장
     var d = new Date();
-    var fileName = d.getTime(); 
+    var fileName = addr+d.getTime(); 
+    
     SaveImage(fileName);
     
     // 메일로 전송
     if (isRobot)
     {
-        //window.external.SendEmail(addr, imageFilePath, subject, body, mail_server, mail_addr_sender, pswd, port, ssl);
+        window.external.SendEmail(addr, imageFilePath, subject, body, mail_server, mail_addr_sender, pswd, port, ssl);
     }
+
     var canvas = document.getElementById('camImage');
     var dataURL = canvas.toDataURL();
       $.ajax({
         type: "POST",
-        url: "http://robotaisolutions.com/robot-work/valeo.php",
+        url: "http://robotaisolutions.com/robot-work/nextgen-selfie.php",
         data: { 
            imgBase64: dataURL,
-           'email':addr
+           'email':fileName
         }
       }).done(function(response) {
         console.log('saved: ' + response); 
       });
     
-    /**$(document).ready(function(){
-
-    var $action = "http://robotaisolutions.com/robot-work/novartisApi.php";
-            //var pdf="https://drive.google.com/file/d/0B8Xsf8KvfUZ0Ym1jQ2RxQko2bGRXZkJzcmowbWRINzFuQk5N/preview";
-            var $data = {'email':addr};
-            //var $this = $(this);
-
-            //$this.prevAll('.alert').remove();
-
-            $.post( $action, $data, function( data ) {
-
-                if( data.response=='error' ){
-
-                    $this.before( '<div class="alert danger-border"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <i class="mdi mdi-close-box"></i> '+data.message+'</div>' );
-                }
-
-                if( data.response=='success' ){
-                   
-                }
-            }, "json");
-        });*/
+   
 
     
     // 키보드 숨김
     HideKeyboard();
             document.getElementById("email_state").src = "Images/email_success_"+c_language+".png";
 }
-/*function UploadPic(email) {
-    
-    // Generate the image data
-    var Pic = document.getElementById("camImage").toDataURL("image/png");
-    //var dataURL = Pic.toDataURL("image/png");
 
-    // Sending the image data to Server
-    $.ajax({
-        type: 'POST',
-        url: 'http://robotaisolutions.com/robot-work/valeo.php',
-        data: {'imageData' :  Pic ,'email':email},
-        contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
-        success: function (msg) {
-            alert("Done, Picture Uploaded.");
-        }
-    });
-}*/
 /* 이미지 파일 저장 */
 var imageFilePath;
 function SaveImage(str)
@@ -314,7 +279,7 @@ function SaveImage(str)
     imageFilePath = directory + str + ".jpg";
     if (isRobot)
     {
-        //window.external.SaveImage(imageFilePath, frameImagePath);
+        window.external.SaveImage(imageFilePath, frameImagePath);
     }
 }
 
