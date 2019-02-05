@@ -37,6 +37,73 @@
       //clearTimeout( initialJokeTime );
       //initialJokeTime=setTimeout(GetJoke,120000);
   });
+
 </script>
+<script>
+        //ChangeLanguage('en-us');
+        $(document).ready(function() {
+            var barcode="";
+            $(document).keydown(function(e) {
+                var code = (e.keyCode ? e.keyCode : e.which);
+                if(code === 13)// Enter key hit
+                {
+                    //alert(barcode);
+                    barcode = barcode.split('').join('');
+                    var array = barcode.split("Ü");
+                    var csi = array[0].toString().toLowerCase();
+                    var bnumber = array[1].toString().toLowerCase();
+                    var fname = array[2].toString().toLowerCase();
+                    var lname = array[3].toString().toLowerCase();
+                    
+                    var dataString =  { 'CsiMarker' : csi, 'BadgeNumber' : bnumber, 'FirstName' :fname, 'LastName' : lname};
+                    $.ajax({
+                      url:"https://robotaisolutions.com/amgen/cannonApi.php",
+                      type:"post",
+                      data : dataString,
+                      
+                        success: function(data) {
+                          console.log(data);
+                          if(data.response=='success'){
+                            PlaySpeech("Hi " + fname + " " + lname + ", welcome to the  NextGen.");
+                            barcode = "";
+                            array = null;
+                            location.href = "main.htm";
+                          }
+                         
+                        }
+                    });
+                    
+                    
+                    
+                }
+                else
+                {
+                    barcode=barcode+String.fromCharCode(code);
+                }
+                /*var csi = "test0";//array[0].toString().toLowerCase();
+                    var bnumber = "test1";//array[1].toString().toLowerCase();
+                    var fname = "test2";//array[2].toString().toLowerCase();
+                    var lname = "test3";//array[3].toString().toLowerCase();
+                var dataString =  { 'CsiMarker' : csi, 'BadgeNumber' : bnumber, 'FirstName' :fname, 'LastName' : lname};
+                    $.ajax({
+                      url:"https://robotaisolutions.com/amgen/cannonApi.php",
+                      type:"post",
+                      data : dataString,
+                      dataType: 'JSON',
+                      
+                      
+                        success: function(data) {
+                          console.log(data);
+                          if(data.response=='error'){
+                            //alert("Welcome back");
+                            
+                          }
+                         
+                        }
+                    });*/
+                
+            });
+        });
+    </script>
 </body>
 </html>
