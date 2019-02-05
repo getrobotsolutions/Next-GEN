@@ -72,17 +72,7 @@
   if (!readCookie("NavigationState")) {
     writeCookie("NavigationState", true, 30);
   }
-  function GetJoke(){
-    var temp=Math.floor((Math.random() * 6) + 1);
-    PlaySpeech(jokes[temp]);
-    //alert(jokes[temp]);
-  }
-  var initialJokeTime=setTimeout(GetJoke,30000);
 
-  $(document).click(function(event) {
-      //clearTimeout( initialJokeTime );
-      //initialJokeTime=setTimeout(GetJoke,120000);
-  });
 </script>
 </body>
 </html>
