@@ -67,6 +67,9 @@ function FC_ContentsCall(strContentsName, strLanguage)
         case "Config":
             location.href = "Config/Config.htm";
             break;
+        case "go-mobile":
+            location.href = "Contents/go-moobile/index.html";
+            break;
         default:
             break;
     } // end switch(strContentsName)
