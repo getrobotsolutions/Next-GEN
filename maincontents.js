@@ -130,20 +130,20 @@ function OnJoystickControlled(strPara){
     if(btn_info[0] == '1'){
             window.external.ChangeLanguage("en-us");
             SetVolume(1);
-            window.external.PlaySpeech("Welcome to NextGen Mobile Solutions, we help caregivers be more productive and profitable.   Please press a button on my screen to learn more.");//I'm here to assist you, press any button on my screen to begin");
+            window.external.PlaySpeech("");//I'm here to assist you, press any button on my screen to begin");
           
     }
 
     if(btn_info[1] == '1'){
         window.external.ChangeLanguage("en-us");
         SetVolume(1);
-        window.external.PlaySpeech("Click on the tablet to see NextGen in action, the app works on tablets and smart phones.");
+        window.external.PlaySpeech("");
         
     }
     if(btn_info[2] == '1'){
         window.external.ChangeLanguage("en-us");
             SetVolume(1);
-            window.external.PlaySpeech("Click on the tablet to see NextGen in action, the app works on tablets and smart phones.  I’m sure you’ll love the app, it’s awesome.");
+            window.external.PlaySpeech("");
     }
     if(btn_info[3] == '1'){
         window.external.ChangeLanguage("en-us");
@@ -152,10 +152,6 @@ function OnJoystickControlled(strPara){
         
     }
     if(btn_info[4] == '1'){
-        $(document).ready(function(){
-            $('.navigation').hide();
-            $('.welcome-text, .get-started, footer').show();
-            writeCookie("NavigationState", false, 30);
-        })       
+        FC_ContentsCall('Config');       
     }
 }

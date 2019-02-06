@@ -201,3 +201,9 @@ a.button {
     cursor: pointer;
     height: 92px;
 }
+.config{
+	    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: 0;
+}
