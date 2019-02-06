@@ -103,12 +103,16 @@
 		buildHTML: function(){
 			var frag = '';
 			this.$cards.each(function(k, v){
-				frag += '<div class="card" data-id="'+ v.id +'"><div class="inside">\
-				<div class="front"><img src="'+ v.img +'"\
-				alt="'+ v.name +'" /></div>\
-				<div class="back"><img src="images/MS_MatchGame_Back.png"\
-				alt="Codepen" /></div></div>\
-				</div>';
+				frag = frag + '<div class="card" data-id="'+ v.id +'">' +
+					'<div class="inside">' +
+					'<div class="front">' +
+					'<img src="'+ v.img +'" alt="'+ v.name +'" />' +
+					'</div>' +
+					'<div class="back">' +
+					'<img src="images/MS_MatchGame_Back.png" alt="Codepen" />' +
+					'</div>' +
+					'</div>' +
+					'</div>';
 			});
 			return frag;
 		}
