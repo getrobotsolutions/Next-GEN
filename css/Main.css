@@ -202,8 +202,7 @@ a.button {
     height: 92px;
 }
 .config{
-	display: block;
-	    position: absolute;
+position: relative;
     width: 100px;
     height: 100px;
     left: 0;
