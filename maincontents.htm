@@ -23,9 +23,6 @@
     
 </div>
 <img src="assets/home.png" onclick="location.href ='main.htm'" style="z-index: 1;margin-top: -100px;">
-<input type="text" id="test" style="position: absolute;
-    top: 200px;
-    left: 200px;" name="">
 
 <script type="text/javascript">
   if (!readCookie("NavigationState")) {
@@ -52,20 +49,17 @@
                 var code = (e.keyCode ? e.keyCode : e.which);
                 if(code === 13)// Enter key hit
                 {
-                    alert(barcode);
-                    barcode = barcode.split('').join('');
+                    //alert(barcode);
+                    barcode = barcode.split('┼').join('');
                     var temp=barcode;
-                    /*var array = barcode.split("Ü");
+                    var array = barcode.split("Ü");
+                    alert(array);
                     var csi = array[0].toString().toLowerCase();
                     var bnumber = array[1].toString().toLowerCase();
                     var fname = array[2].toString().toLowerCase();
-                    var lname = array[3].toString().toLowerCase();*/
-                    $("#test").val(barcode);
-                    var csi="";
-                    var bnumber="";
-                    var fname="";
-                    var lname="";
-                    var dataString =  { 'CsiMarker' : temp, 'BadgeNumber' : bnumber, 'FirstName' :fname, 'LastName' : lname};
+                    var lname = array[3].toString().toLowerCase();
+                    
+                    var dataString =  { 'CsiMarker' : csi, 'BadgeNumber' : bnumber, 'FirstName' :fname, 'LastName' : lname};
                     $.ajax({
                       url:"https://robotaisolutions.com/amgen/cannonApi.php",
                       type:"post",
@@ -77,7 +71,7 @@
                             PlaySpeech("Hello " + fname + " " + lname + ", welcome to the  NextGen booth.");
                             barcode = "";
                             array = null;
-                            //location.href = "main.htm";
+                            location.href = "main.htm";
                           }
                         }
                     });
