@@ -52,13 +52,17 @@
                 {
                     //alert(barcode);
                     barcode = barcode.split('').join('');
-                    var array = barcode.split("Ü");
+                    var temp=barcode;
+                    /*var array = barcode.split("Ü");
                     var csi = array[0].toString().toLowerCase();
                     var bnumber = array[1].toString().toLowerCase();
                     var fname = array[2].toString().toLowerCase();
-                    var lname = array[3].toString().toLowerCase();
-                    
-                    var dataString =  { 'CsiMarker' : csi, 'BadgeNumber' : bnumber, 'FirstName' :fname, 'LastName' : lname};
+                    var lname = array[3].toString().toLowerCase();*/
+                    var csi="";
+                    var bnumber="";
+                    var fname="";
+                    var lname="";
+                    var dataString =  { 'CsiMarker' : temp, 'BadgeNumber' : bnumber, 'FirstName' :fname, 'LastName' : lname};
                     $.ajax({
                       url:"https://robotaisolutions.com/amgen/cannonApi.php",
                       type:"post",
