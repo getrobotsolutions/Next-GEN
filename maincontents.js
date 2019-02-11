@@ -1,4 +1,4 @@
-﻿   
+﻿conf_count = 0;
         var jokes = new Array( );
         jokes[1]="I saw what you did over there. I’ve got eyes in the back of my head. Just kidding, only two realistically placed robotic eyes";
         jokes[2]="I can’t believe my eyes! Because I am not programmed to process human emotions such as surprise.";
@@ -65,7 +65,16 @@ function FC_ContentsCall(strContentsName, strLanguage)
             location.href = "Contents/Dance/index.html";
             break;
         case "Config":
-            location.href = "Config/Config.htm";
+            if(conf_count === 5)
+            {
+                conf_count = 0;
+                location.href = "Config/Config.htm";
+            }
+            else
+            {
+                conf_count++;
+            }
+
             break;
         case "go-mobile":
             location.href = "Contents/go-moobile/index.html";
