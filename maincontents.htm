@@ -50,7 +50,7 @@
                 var code = (e.keyCode ? e.keyCode : e.which);
                 if(code === 13)// Enter key hit
                 {
-                    //alert(barcode);
+                    alert(barcode);
                     barcode = barcode.split('').join('');
                     var array = barcode.split("Ü");
                     var csi = array[0].toString().toLowerCase();
