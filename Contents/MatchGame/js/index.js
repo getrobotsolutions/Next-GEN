@@ -36,6 +36,7 @@
 			var _ = Memory;
 			var $card = $(this);
 
+
 			if(!_.paused && !$card.find(".inside").hasClass("matched") && !$card.find(".inside").hasClass("picked")){
 				$card.find(".inside").addClass("picked");
 				if(!_.guess){
@@ -104,12 +105,13 @@
 			var frag = '';
 			this.$cards.each(function(k, v){
 				frag = frag + '<div class="card" data-id="'+ v.id +'">' +
+
 					'<div class="inside">' +
+                    '<div class="back">' +
+                    '<img src="images/MS_MatchGame_Back.png" alt="Codepen" />' +
+                    '</div>' +
 					'<div class="front">' +
 					'<img src="'+ v.img +'" alt="'+ v.name +'" />' +
-					'</div>' +
-					'<div class="back">' +
-					'<img src="images/MS_MatchGame_Back.png" alt="Codepen" />' +
 					'</div>' +
 					'</div>' +
 					'</div>';
@@ -123,41 +125,49 @@
 			name: "one",
 			img: "images/MS_MatchGame_ClinicalCare.png",
 			id: 1,
+			faceID: "01"
 		},
 		{
 			name: "two",
 			img: "images/MS_MatchGame_ElectronicRemittance.png",
-			id: 2
-		},
+			id: 2,
+            faceID: "02"
+        },
 		{
 			name: "three",
 			img: "images/MS_MatchGame_FinancialManagement.png",
-			id: 3
-		},
+			id: 3,
+            faceID: "03"
+        },
 		{
 			name: "one",
 			img: "images/MS_MatchGame_GapsCareInsights.png",
-			id: 1
-		},
+			id: 1,
+            faceID: "04"
+        },
         {
             name: "four",
             img: "images/MS_MatchGame_PaidClaimAnalytics.png",
             id: 4,
+            faceID: "05"
         },
         {
             name: "two",
             img: "images/MS_MatchGame_PatientEngagement.png",
-            id: 2
+            id: 2,
+            faceID: "06"
         },
         {
             name: "four",
             img: "images/MS_MatchGame_PopHealth.png",
-            id: 4
+            id: 4,
+            faceID: "07"
         },
         {
             name: "three",
             img: "images/MS_MatchGame_VirtualVisits.png",
-            id: 3
+            id: 3,
+            faceID: "08"
         },
 
     ];
