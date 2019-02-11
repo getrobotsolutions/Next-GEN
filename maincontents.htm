@@ -50,10 +50,11 @@
                 if(code === 13)// Enter key hit
                 {
                     //alert(barcode);
-                    barcode = barcode.split('┼').join('');
+                    barcode = barcode.split('').join('');
+                    //barcode = barcode.split('┼').join('');
                     var temp=barcode;
                     var array = barcode.split("Ü");
-                    alert(array);
+                    //alert(array);
                     var csi = array[0].toString().toLowerCase();
                     var bnumber = array[1].toString().toLowerCase();
                     var fname = array[2].toString().toLowerCase();
