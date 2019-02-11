@@ -223,8 +223,8 @@ function SendEmail()
     // 메일 전송에 필요한 정보
     var addr = message;
     //var addr = "paul@robotaisolutions.com";
-    var subject = "Nice to see you at the Novartis Booth!";
-    var body = "Content developed by Novartis. Hello.  Here’s the photo I took of you at the Novartis Booth.  I hope you enjoyed exploring our booth and learning more about Novartis.  Thanks for visiting!  Ophthal Molly, on behalf of the Novartis Team.  (This is an unattended mailbox.). Novartis Pharmaceuticals Corporation, One Health Plaza, East Hanover, NJ 07936-1080, ©2018 Novartis, 10/18, T-MNB-1364526.";
+    var subject = "Nice to see you at the NextGen Healthcare’s booth!";
+    var body = "Thank you for stopping by NextGen Healthcare’s booth, #2701 at HIMSS19. As NextGen continues to empower the transformation of ambulatory care we look forward to sharing more of our innovative, agnostic solutions and services with you. Please find us on the web at www.nextgen.com or on social media. https://twitter.com/nextgen #BelieveinBetter https://www.facebook.com/NextGenHealthcare https://www.linkedin.com/company/nextgen-healthcare-information-systems/ https://www.instagram.com/nextgenhealthcare/";
     //var mail_server = "smtp.gmail.com";
     //var mail_addr_sender = "ict.muscatairport@gmail.com";
     //var pswd = "123456789K";
